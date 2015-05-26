@@ -1,0 +1,22 @@
+﻿# Turn on URL rewriting
+RewriteEngine On
+
+# Installation directory
+RewriteBase /
+
+# Protect hidden files from being viewed
+<Files .*>
+	Order Deny,Allow
+	Deny From All
+</Files>
+
+php_value max_execution_time 1200
+
+php_value memory_limit 200M
+
+php_value post_max_size 200M
+
+php_value upload_max_filesize 200M
+
+#api route
+RewriteRule ^api/?(.*)\/(.*)$ api.php?$1=$2 [L]
