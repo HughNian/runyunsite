@@ -1,0 +1,14 @@
+document.write("<script language=javascript src=\"scripts\/config\/config.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/function\/function.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/function\/loading.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/angular\/angular.min.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/angular\/angular-route.min.js\"><\/script>");
+document.write("<script src=\"scripts\/app.js\"></script>");
+document.write("<script language=javascript src=\"scripts\/controller\/mainsidebarController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/maincontentController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/templateController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/templatedetailController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/dynamiclistController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/dynamicdetailController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/postdemandController.js\"><\/script>");
+document.write("<script language=javascript src=\"scripts\/controller\/footerController.js\"><\/script>");

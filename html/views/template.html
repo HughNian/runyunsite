@@ -1,0 +1,39 @@
+<ng-include src="'views/othermenu.html'"></ng-include>
+
+<div id="main-content">
+  <div class="container-fluid">
+    <div id="services" class="section-content" ng-controller="templateController">
+      <div class="row_1">
+      	<ul class="menu_list contact-form ng-cloak" ng-repeat="val in tplmenus" ng-cloak>
+        	<li class="col-md-13"><a href data="{{val.index}}" ng-click="switchtpl($event.target)">{{val.typename}}</a></li>
+        </ul>
+      </div>
+      <div class="row" id="currenttpl">
+        <div class="col-md-4 w50 ng-cloak" ng-repeat="val in defaulttpl" ng-cloak>
+          <div class="member-item" ng-click="tpldetail(val.id, val.typeid)">
+            <div class="member-thumb"> <img src="..{{val.litpic}}" alt="">
+              <div class="overlay">
+                <ul class="social-member">
+                  <li><img src="..{{val.qrcode}}" alt=""/></li>
+                </ul>
+              </div>
+            </div>
+            <div class="member-content">
+              <h4>{{val.title}}</h4>
+              <p>类别：{{val.typename}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 --> 
+      </div>
+      <!-- /.row -->
+      <button class="bord1" ng-show="ismore" typeid="{{typeid}}" key="{{key}}" page="{{page}}" ng-click="moreinfo($event.target)">查看更多模板</button>
+    </div>
+    <!-- /#services -->
+    
+  </div>
+  <!-- /.container-fluid -->
+  <ng-include src="'views/footer.html'"></ng-include> 
+  
+</div>
+<!-- /#main-content -->

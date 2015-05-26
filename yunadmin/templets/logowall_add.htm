@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>logo墙管理</title>
+<script language='javascript'>
+function CheckSubmit()
+{
+	if(document.form1.name.value=="")
+	{
+   		document.form1.name.focus();
+   		alert("名称不能为空！");
+   		return false;
+	}
+	if(document.form1.logoimg.value == "")
+	{
+		alert("请上传logo图片");
+		return false;
+	}
+	return true;
+}
+</script>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+<table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6">
+  <tr>
+    <td height="28" background="images/tbg.gif" style="padding-left:10px;"><b><a href="friendlink_main.php"><u>logo墙管理</u></a></b>&gt;&gt;增加logo墙</td>
+</tr>
+<tr>
+    <td height="200" bgcolor="#FFFFFF" valign="top">
+	<form action="logowall_add.php" method="post" enctype="multipart/form-data" name="form1" onSubmit="return CheckSubmit();";>
+	<input type="hidden" name="dopost" value="add" />
+	<table width="80%"  border="0" cellspacing="1" cellpadding="3">
+	  <tr>
+        <td width="19%" height="25">网址：</td>
+        <td width="81%">
+        	<input name="url" type="text" id="url" value="http://" size="30" class='pubinputs' />
+        </td>
+      </tr>
+      <tr>
+        <td height="25">名称：</td>
+        <td>
+        	<input name="name" type="text" id="webname" size="30" class='pubinputs' />
+        </td>
+      </tr>
+      <tr>
+        <td width="19%" height="25">排列位置：</td>
+        <td width="81%">
+        <input name="sortrank" type="text" id="sortrank" value="1" size="10" class='pubinputs' style='width:60px' />
+        (由小到大排列)
+        </td>
+      </tr>
+      <tr>
+        <td height="25">上传Logo：</td>
+        <td>
+        	<input name="logoimg" type="file" id="logoimg" size="30" class='pubinputs' />
+        </td>
+      </tr>
+      <tr>
+        <td height="51">&nbsp;</td>
+        <td>
+        	<input type="submit" name="Submit" value=" 提 交 " class="coolbg np" />　 　
+          <input type="reset" name="Submit" value=" 重 置 " class="coolbg np" />
+         </td>
+      </tr>
+    </table>
+	</form>
+ </td>
+</tr>
+</table>
+</body>
+</html>

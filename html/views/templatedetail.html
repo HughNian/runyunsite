@@ -1,0 +1,39 @@
+<ng-include src="'views/othermenu.html'"></ng-include>
+
+<div id="main-content">
+  <div class="container-fluid">
+    <div id="services" class="section-content" ng-controller="templatedetailController">
+      
+      <div class="row contact-form ">
+      <div class="col-md-12 ">
+          <div class="col-md-12 member-content1 ng-cloak" ng-cloak>
+            <div class="col-md-10 ">
+              <h3>{{title}}</h3>
+              {{description}}
+            </div>
+            <div class="col-md-2 member-content xq_right ng-cloak" ng-cloak>
+              <h4>分类：{{typename}}</h4>
+              <img src="..{{qrcode}}" />
+            </div>
+            </div>
+        </div>
+      	<div class="col-md-12 xq">
+      	    <span class="ng-cloak" ng-repeat="img in imgurls" ng-cloak>
+            <img src="../../{{img}}"/>
+            </span>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row ">
+      	<div class="col-md-6"><button class="bord1 w100" ng-click="prevtpl(previd)" ng-show="!isfirst">上一个</button></div>
+        <div class="col-md-6"><button class="bord1 w100" ng-click="nexttpl(nextid)" ng-show="!islast">下一个</button></div>
+      </div>
+    </div>
+    <!-- /#services -->
+    
+  </div>
+  <!-- /.container-fluid -->
+  <ng-include src="'views/footer.html'"></ng-include> 
+  
+</div>
+<!-- /#main-content -->

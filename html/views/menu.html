@@ -1,0 +1,44 @@
+<!-- 首页菜单页面 -->
+<div ng-controller="mainsidebarController">
+<div class="responsive-navigation visible-sm visible-xs"> 
+  <a href="javascript:;" class="menu-toggle-btn" ng-click="menutoggle($event.target)"> <i class="fa fa-bars fa-2x"></i> </a>
+  <div class="navigation responsive-menu">
+    <ul class="main-menu">
+      <li class="home"><a href="javascript:;" mid="templatemo" ng-click="scrollto($event.target)" ng-bind="home" class="active"></a></li>
+      <li class="services"><a href="javascript:;" mid="services" ng-click="scrollto($event.target)" ng-bind="services"></a></li>
+      <li class="dynamic"><a href="javascript:;" mid="dynamic" ng-click="scrollto($event.target)" ng-bind="dynamic"></a></li>
+      <li class="portfolio"><a href="javascript:;" mid="portfolio" ng-click="scrollto($event.target)" ng-bind="portfolio"></a></li>
+      <li class="about"><a href="javascript:;" mid="about" ng-click="scrollto($event.target)" ng-bind="about"></a></li>
+      <li class="contact"><a href="javascript:;" mid="contact" ng-click="scrollto($event.target)" ng-bind="contact"></a></li>
+    </ul>
+    <!-- /.main_menu --> 
+  </div>
+  <!-- /.responsive_menu --> 
+</div>
+<!-- /responsive_navigation -->
+
+<div id="main-sidebar" class="hidden-xs hidden-sm">
+  <div class="login"> <a href="http://www.hoperuncloud.com/frm/"><span>登录</span></a> <a href="http://www.hoperuncloud.com/frm/"><span>注册</span></a>
+    <div class="QR"> <img class="QR_ico" src="images/index.png" alt=""/> <img class="QR_pic" src="images/QR_Code.png" alt=""/> </div>
+  </div>
+  <!-- /.login -->
+  <div class="logo"> <a href="" ><img src="images/logo.png" alt=""/></a> <span>ADM营销服务云平台</span> </div>
+  <!-- /.logo -->
+  
+  <div class="navigation">
+    <ul class="main-menu">
+      <li class="home"><a href="javascript:;" mid="templatemo" ng-click="scrollto($event.target)" ng-bind="home" class="active"></a></li>
+      <li class="services"><a href="javascript:;" mid="services" ng-click="scrollto($event.target)" ng-bind="services"></a></li>
+      <li class="dynamic"><a href="javascript:;" mid="dynamic" ng-click="scrollto($event.target)" ng-bind="dynamic"></a></li>
+      <li class="portfolio"><a href="javascript:;" mid="portfolio" ng-click="scrollto($event.target)" ng-bind="portfolio"></a></li>
+      <li class="about"><a href="javascript:;" mid="about" ng-click="scrollto($event.target)" ng-bind="about"></a></li>
+      <li class="contact"><a href="javascript:;" mid="contact" ng-click="scrollto($event.target)" ng-bind="contact"></a></li>
+    </ul>
+  </div>
+  <!-- /.navigation -->
+  <!--<ng-include src="'views/contact.html'"></ng-include>-->
+  <!-- /.customer --> 
+  
+</div>
+</div>
+<!-- /#main-sidebar -->

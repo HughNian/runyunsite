@@ -1,0 +1,25 @@
+@charset "utf-8";
+.showDivBack {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color: black; 
+	text-align: center; 
+	color: #EFEFEF;
+	line-height: 60px; 
+	font-size: 22px; 
+	font-weight: bold; 
+	z-index:999; 
+	width: 260px; 
+	opacity:0.90;
+	height: 60px; 
+	left:48%; 
+	top:50%; 
+	margin-left:-150px!important; /* FF IE7 */ 
+	margin-top:-60px!important;  /* FF IE7 */ 
+	margin-top:0px; 
+	position:fixed!important;   /* FF IE7*/ 
+	position:absolute; /*IE6*/ 
+	_top:expression(eval(document.compatMode && document.compatMode=='CSS1Compat') ? 
+	                     documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/ 
+	                     document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);           /*IE5 IE5.5*/ 
+}

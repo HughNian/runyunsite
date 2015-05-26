@@ -1,0 +1,295 @@
+<ng-include src="'views/menu.html'"></ng-include>
+
+<div id="main-content" ng-controller="maincontentController">
+  <div id="templatemo">
+    <div class="main-slider">
+      <div class="flexslider">
+        <ul class="slides">
+            
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="welcome-text">
+            <h2>ADM营销服务云平台</h2>
+            <p>专注于ADM营销服务，契合移动互联网时代需求，充分利用社会化传播工具，提供主动式、游戏化、即时营销，直达营销对象，激活粉丝，
+              实现品牌快速传播。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#sTop -->
+  
+  <div class="container-fluid">
+    <div id="services" class="section-content">
+     	<div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2>{{title1}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row_1">
+      	<ul class="menu_list ng-cloak" ng-repeat="val in tplmenus" ng-cloak>
+        	<li class="col-md-13"><a href data="{{val.index}}" ng-click="switchtpl($event.target)">{{val.typename}}</a></li>
+        </ul>
+      </div>
+      <div class="row" id="currenttpl">
+        <div class="col-md-3 ng-cloak" ng-repeat="val in defaulttpl" ng-cloak>
+          <div class="member-item" typeid="{{val.typeid}}" ng-click="tpldetail(val.id, val.typeid)">
+            <div class="member-thumb"> <img src="..{{val.litpic}}" >
+              <div class="overlay">
+                <ul class="social-member">
+                  <li><img src="..{{val.qrcode}}"/></li>
+                </ul>
+              </div>
+            </div>
+            <div class="member-content">
+              <h4>{{val.title}}</h4>
+              <p>类别：{{val.typename}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-3 --> 
+      </div>
+      <!-- /.row -->
+      <button class="bord1" ng-click="moretpl()">查看更多模板</button>
+    </div>
+    <!-- /#services -->
+    
+    <div id="dynamic" class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2>{{title2}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 f-bg ng-cloak" ng-repeat="val in dynamic" ng-cloak>
+          <div class="member-item">
+            <a href="#dynamicdetail/{{val.typeid}}/{{val.id}}"><div class="member-thumb"> <img src="..{{val.litpic}}"></div></a>
+            <a href="#dynamicdetail/{{val.typeid}}/{{val.id}}">
+            <div class="member-content">
+              <h4>{{val.title}}</h4>
+              <p>{{val.description}}</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <!-- /.col-md-4 --> 
+      </div>
+      <button class="bord2" ng-click="moredynamic()">查看更多动态</button>
+      <!-- /.row -->
+    </div>
+    <!-- /#dynamic -->
+    
+    
+    <div id="portfolio" class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2>{{title3}}</h2>
+          </div>
+          <!-- /.section-title --> 
+        </div>
+        <!-- /.col-md-12 --> 
+      </div>
+      <!-- /.row -->
+      
+      <div class="row">
+        <div class="col-md-8" ng-bind-html="portcontent">
+          {{portcontent}}
+        </div>
+        <div class="col-md-4">
+          <div class="story-image"> <img src="..{{portimg}}" alt="" ng-show="portimgtag"> </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-md-2 ng-cloak" ng-repeat="val in logowall" ng-cloak>
+          <div class="portfolio-item">
+            <div class="portfolio-thumb"> <img src="{{val.logo}}" alt="">
+            	<div class="overlay-p"> <a>{{val.name}}</a> </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-2 -->
+      </div>
+    </div>
+    <!-- /#portfolio -->
+    
+    <div id="about" class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2>{{title4}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="story-image" ng-model="aboutimg"> <img src="..{{aboutimg}}" alt="" ng-show="aboutimgtag"> </div>
+        </div>
+        <span ng-bind-html="aboutcontent">
+          {{aboutcontent}}
+        </span>
+      </div>
+      
+      <!-- /.row -->
+    </div>
+    <!-- /#about -->
+    
+    <div id="contact" class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2>联系我们</h2>
+          </div>
+          <!-- /.section-title --> 
+        </div>
+        <!-- /.col-md-12 --> 
+      </div>
+      <!-- /.row -->
+      <div class="row contact-form" ng-controller="postdemandController">
+      <div class="col-md-8">
+         <div class="col-md-12"><h4>告诉我们您的需求</h4></div>
+        <div class="col-md-6">
+          <input name="name" type="text" placeholder="请输入姓名">
+        </div>
+        <div class="col-md-6">
+          <input name="telephone" type="text"  placeholder="请输入电话">
+        </div>
+        <div class="col-md-12">
+          <input name="email" type="text"  placeholder="请输入邮箱">
+        </div>
+        <div class="col-md-12">
+          <input name="company" type="text"  placeholder="请输入公司名称">
+        </div>
+        <div class="col-md-12">
+          <textarea  rows="6"  id="msg" placeholder="请输入需求"></textarea>
+        </div>
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-4">
+        <div class="col-md-12"><h4>联系我们</h4></div>
+        <div class="col-md-12" id="tel">
+          <h4>联系电话：</h4>
+          <h2>025-52668402</h2>
+          <h4>E-mail：</h4>
+          <h4>hpcloud.list@hoperun.com</h4>
+
+        </div>
+        <div class="col-md-12">
+			<div style="height:300px;width:100%;" id="dituContent"></div>
+			<script type="text/javascript">
+			function initMap(){
+				createMap();
+				setMapEvent();
+				addMapControl();
+				addMarker();
+			}
+			function createMap(){
+				var map = new BMap.Map("dituContent");
+				var point = new BMap.Point(118.764721,31.980074);//中心点
+				map.centerAndZoom(point,17);//显示层级
+				window.map = map;
+			}
+			function setMapEvent(){
+				map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+				map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+				map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+				map.enableKeyboard();//启用键盘上下左右键移动地图
+			}
+			
+			
+			function addMapControl(){
+				//向地图中添加缩放控件
+			var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+			map.addControl(ctrl_nav);
+				//向地图中添加缩略图控件
+			var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+			map.addControl(ctrl_ove);
+				//向地图中添加比例尺控件
+			var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+			map.addControl(ctrl_sca);
+			}
+			
+			var markerArr = [{title:"江苏润和软件股份有限公司",content:"中国南京雨花台区软件大道168号雨花润和软件外包园<br /> +025-52668402",point:"118.764721|31.980074",isOpen:0,icon:{w:234,h:87,l:0,t:0,x:0,lb:-11}}
+				 ];
+			
+			function addMarker(){
+				for(var i=0;i<markerArr.length;i++){
+					var json = markerArr[i];
+					var p0 = json.point.split("|")[0];
+					var p1 = json.point.split("|")[1];
+					var point = new BMap.Point(p0,p1);
+					var iconImg = createIcon(json.icon);
+					var marker = new BMap.Marker(point,{icon:iconImg});
+					var iw = createInfoWindow(i);
+					var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+					marker.setLabel(label);
+					map.addOverlay(marker);
+					label.setStyle({
+								borderColor:"#808080",
+								color:"#333",
+								cursor:"pointer"
+					});
+					
+					(function(){
+						var index = i;
+						var _iw = createInfoWindow(i);
+						var _marker = marker;
+						_marker.addEventListener("click",function(){
+							this.openInfoWindow(_iw);
+						});
+						_iw.addEventListener("open",function(){
+							_marker.getLabel().hide();
+						})
+						_iw.addEventListener("close",function(){
+							_marker.getLabel().show();
+							label.hide();
+						})
+						label.addEventListener("click",function(){
+							_marker.openInfoWindow(_iw);
+						})
+						if(!!json.isOpen){
+							label.hide();
+							_marker.openInfoWindow(_iw);
+						}
+						label.hide();
+					})()
+				}
+			}
+			function createInfoWindow(i){
+				var json = markerArr[i];
+				var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+				return iw;
+			}
+			function createIcon(json){
+				var icon = new BMap.Icon("images/maplogo.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+				return icon;
+			}
+			initMap();
+			</script>
+        </div>
+        </div>
+        
+        <div class="col-md-12">
+          <div class="submit-btn"> <a href="javascript:void(0)" class="largeButton contactBgColor" ng-click="post()">提交</a> </div>
+          <!-- /.submit-btn --> 
+        </div>
+        <!-- /.col-md-12 --> 
+      </div>
+    </div>
+    <!-- /#contact --> 
+    
+  </div>
+  <!-- /.container-fluid -->
+  <ng-include src="'views/footer.html'"></ng-include> 
+  
+</div>
+<!-- /#main-content -->

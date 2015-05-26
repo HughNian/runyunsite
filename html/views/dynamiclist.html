@@ -1,0 +1,51 @@
+<ng-include src="'views/othermenu.html'"></ng-include>
+
+<div id="main-content">
+  <div class="container-fluid">
+    <div id="dynamic" class="section-content" ng-controller="dynamiclistController">
+      <div class="row contact-form news">
+        <div class="col-md-12">
+           <div class="col-md-4 ng-cloak" ng-repeat="type in types" ng-cloak on-finish-render-filters>
+                <h4 ng-click="tolist($event.target, type.id)" typeid = "{{type.id}}">{{type.typename}}</h4>
+           </div>
+        </div>
+        <div class="col-md">
+          <div class="head-warp">
+            <div class="head">
+              <div class="nav-box">
+                <ul>
+                  <li class="cur"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="main">
+          
+			<div class="history" >
+            
+               <div class="history-date ng-cloak" ng-repeat="data in dynamics" ng-cloak on-finish-render-list>
+                <ul>
+                  <h1 class="first"><a href="#nogo">{{data.year}}</a></h1>
+                  <li class="green" ng-repeat="val in data.data track by $index">
+                    <h3>{{val.daytime}}<span ng-model="year">{{val.year}}</span></h3>
+                    <dl>
+                      <a href="#dynamicdetail/{{val.typeid}}/{{val.id}}"><dt>{{val.title}} <span>{{val.description}}</span> </dt></a>
+                    </dl>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#services --> 
+    
+  </div>
+  <!-- /.container-fluid -->
+  <ng-include src="'views/footer.html'"></ng-include>
+  
+</div>
+<!-- /#main-content -->
